@@ -1,0 +1,18 @@
+## in log(m+n) time
+import numpy as np
+def fastmedian(nums1, nums2):
+    a = len(nums1)
+    b = len(nums2)
+    if not nums1:
+        return nums2[a//2]
+    elif not nums2:
+        return nums1[b//2]
+    else:
+        low = nums1[-1]
+        print(low)
+        high = nums2[0]
+        print(high)
+        ans = float((low+high)/2)
+        print("ans", ans)
+        return ans
+fastmedian([1,2],[3,4])
