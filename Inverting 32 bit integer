@@ -1,0 +1,11 @@
+##invert 32 bit integer
+def invert(x):
+    sign = [1,-1][x < 0] ##if x<0 return -1, if x>0 return -1
+    y = int(str(abs(x))[::-1]) ##int takes care of leading 0
+    result = sign * y #can get rid of y to make it faster and save space
+    l = -(2**31)-1
+    r = 2**31
+    if l < result < r: ##if -(2**31)-1<result<2**31 saves space
+        return result #return result if -(2**31)-1 < result < 2**31 else 0
+    return 0
+invert(-10)
