@@ -1,0 +1,20 @@
+##longest palindrome
+import time
+def isP(s):
+    return s[::-1] == s
+def longestPalindrome(s):
+    start = time.time()
+    if s == s[::-1]:
+        return s
+    substrings = set()
+    for i in range(len(s)+1):
+        for j in range(i+1, len(s)+1):
+            temp = s[i:j]
+            if isP(temp):
+                substrings.add((temp))
+    if substrings:
+        end = time.time()
+        print(end-start)
+        return (max(substrings, key=len))
+    return("")
+longestPalindrome(t)
